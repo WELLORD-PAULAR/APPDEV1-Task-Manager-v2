@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h2 class="h5 mb-4">Add New Task</h2>
+      <form (submit)="onSubmit($event)">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" id="title" class="form-control" placeholder="Task title" required [value]="title()" (input)="title.set($event.target.value)">
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea id="description" class="form-control" rows="3" placeholder="Task description" [value]="description()" (input)="description.set($any($event.target).value)"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="dueDate" class="form-label">Due Date</label>
+          <input type="date" id="dueDate" class="form-control" [value]="dueDate()" (input)="dueDate.set($event.target.value)">
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Add Task</button>
+      </form>
+    </div>
+  </div>
+</div>
