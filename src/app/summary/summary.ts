@@ -11,4 +11,5 @@ export class Summary {
   private taskService = inject(TaskService);
   totalTasks = computed(() => this.taskService.getTasks()().length);
   completedTasks = computed(() => this.taskService.getTasks()().filter((t: { completed: boolean }) => t.completed).length);
+  pendingTasks = computed(() => this.totalTasks() - this.completedTasks());
 }
